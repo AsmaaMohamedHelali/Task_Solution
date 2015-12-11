@@ -146,6 +146,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        gaggeredGridLayoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
+        rcAdapter= new SolventRecyclerViewAdapter(MainActivity.this, listViewItems);
+        recyclerView.setAdapter(rcAdapter);
+
+    }
 
     }
 
